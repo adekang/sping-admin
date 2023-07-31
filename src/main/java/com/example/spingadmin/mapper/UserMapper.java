@@ -1,18 +1,18 @@
 package com.example.spingadmin.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.spingadmin.entity.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
-public interface UserMapper {
+public interface UserMapper extends BaseMapper<User> {
     @Select("select * from user")
     List<User> findAll();
 
-    @Select("insert into user (username, nickname, password, email, phone, address) values (#{username},#{nickname},#{password},#{email},#{phone},#{address})")
-    Integer insert(User user);
+    // @Select("insert into gin_demo.user (username, nickname, password, email, phone, address) values (#{username},#{nickname},#{password},#{email},#{phone},#{address})")
+    // int insert(User user);
 
     Integer update(User user);
 

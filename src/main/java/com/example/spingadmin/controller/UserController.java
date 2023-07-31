@@ -29,8 +29,8 @@ public class UserController {
      * 新增或修改用户
      */
     @PostMapping("/save")
-    public Integer save(@RequestBody User user) {
-        return userService.save(user);
+    public Boolean save(@RequestBody User user) {
+        return userService.saveUser(user);
     }
 
     /**
