@@ -14,3 +14,8 @@ mybatis:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+files:
+  upload:
+#    path: D:/DeskTop/java-demo/sping-admin/files/
+    path: D:/DeskTop/files/
