@@ -17,4 +17,5 @@ public class Files {
     private Long size;
     private Boolean isDelete;
     private Boolean enable;
+    private String md5;
 }

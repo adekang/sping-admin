@@ -73,7 +73,12 @@
             <artifactId>hutool-core</artifactId>
             <version>5.6.5</version>
         </dependency>
-
+<!--        https://www.bookstack.cn/read/hutool/a6819f05207359bb.md-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.15</version>
+        </dependency>
     </dependencies>
 
     <build>
