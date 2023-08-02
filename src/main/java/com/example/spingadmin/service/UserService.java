@@ -3,7 +3,6 @@ package com.example.spingadmin.service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.spingadmin.entity.User;
 import com.example.spingadmin.mapper.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
