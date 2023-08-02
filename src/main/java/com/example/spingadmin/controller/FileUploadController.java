@@ -29,7 +29,7 @@ import java.io.IOException;
 @RequestMapping("/file")
 public class FileUploadController {
 
-    private UploadData uploadData;
+    private UploadData UploadData;
     private Papers papers;
     @Resource
     private PapersMapper papersMapper;
@@ -38,10 +38,10 @@ public class FileUploadController {
     @PostMapping("/upload")
     @CrossOrigin
     public String upload(MultipartFile file) throws IOException {
-        EasyExcel.read(file.getInputStream(), Papers.class, new PageReadListener<Papers>(dataList -> {
-            for (Papers paper : dataList) {
-                System.out.println("读取到一条数据:::" + JSON.toJSONString(paper));
-                papersMapper.insert(paper);
+        EasyExcel.read(file.getInputStream(), UploadData.class, new PageReadListener<UploadData>(dataList -> {
+            for (UploadData UploadData : dataList) {
+                System.out.println("读取到一条数据:::" + JSON.toJSONString(UploadData));
+//                papersMapper.insert(paper);
             }
         })).sheet().doRead();
         return "true";
