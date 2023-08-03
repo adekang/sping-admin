@@ -23,6 +23,3 @@ files:
 #    path: D:/DeskTop/java-demo/sping-admin/files/
     path: D:/DeskTop/files/
 
-
-server:
-  port: 9090
