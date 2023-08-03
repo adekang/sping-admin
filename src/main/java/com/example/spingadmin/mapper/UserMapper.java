@@ -1,7 +1,7 @@
 package com.example.spingadmin.mapper;
 
-import com.example.spingadmin.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.spingadmin.entity.User;
 
 /**
  * <p>
