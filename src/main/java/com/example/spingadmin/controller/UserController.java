@@ -1,12 +1,14 @@
 package com.example.spingadmin.controller;
 
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.spingadmin.common.Result;
+import com.example.spingadmin.controller.dto.UserDTO;
 import com.example.spingadmin.entity.User;
 import com.example.spingadmin.service.IUserService;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +35,28 @@ public class UserController {
 
     @Resource(name = "userServiceImpl")
     private IUserService userService;
+
+
+    @PostMapping("/login")
+    public Result login(@RequestBody UserDTO user) {
+        String username = user.getUsername();
+        String password = user.getPassword();
+        if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
+            return Result.error("400", "用户名或密码不能为空");
+        }
+        UserDTO dto = userService.login(user);
+        return Result.success(dto);
+    }
+
+    @PostMapping("/register")
+    public Result register(@RequestBody UserDTO user) {
+        String username = user.getUsername();
+        String password = user.getPassword();
+        if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
+            return Result.error("400", "用户名或密码不能为空");
+        }
+        return Result.success(userService.register(user));
+    }
 
     // 新增或者更新
     @PostMapping("/save")

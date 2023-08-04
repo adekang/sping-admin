@@ -2,6 +2,7 @@ package com.example.spingadmin.entity;
 
 import cn.hutool.core.annotation.Alias;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;
@@ -42,6 +43,9 @@ public class User implements Serializable {
     private String address;
     @Alias("创建时间")
     private LocalDateTime createTime;
+    @Alias("头像")
+    @TableField("avatarUrl")
+    private String avatarUrl;
 
 
 }
